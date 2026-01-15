@@ -37,7 +37,7 @@ const App = () => {
     }),
   });
 
-  const ReactQueryDevtoolsProduction = React.lazy(() =>
+  const ReactQueryDevtoolsProduction = lazy(() =>
   import('@tanstack/react-query-devtools/build/lib/index.prod.js').then(
     (d) => ({
       default: d.ReactQueryDevtools,
