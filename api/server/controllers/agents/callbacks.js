@@ -258,6 +258,7 @@ function getDefaultHandlers({
        * @param {GraphRunnableConfig['configurable']} [metadata] The runnable metadata.
        */
       handle: (event, data, metadata) => {
+        console.log('ON_MESSAGE_DELTA event received:', { event, data, metadata });
         if (checkIfLastAgent(metadata?.last_agent_id, metadata?.langgraph_node)) {
           emitEvent(res, streamId, { event, data });
         } else if (!metadata?.hide_sequential_outputs) {
