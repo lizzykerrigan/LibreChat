@@ -47,6 +47,7 @@ export function createFetch({
  * @returns Object containing handler functions
  */
 export function createStreamEventHandlers(res: ServerResponse) {
+  console.log('createStreamEventHandlers called with res:' + res);
   return {
     [GraphEvents.ON_RUN_STEP]: function (event: ServerSentEvent) {
       if (res) {
