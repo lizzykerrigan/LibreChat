@@ -54,6 +54,7 @@ export function createStreamEventHandlers(res: ServerResponse) {
       }
     },
     [GraphEvents.ON_MESSAGE_DELTA]: function (event: ServerSentEvent) {
+      console.log('createStreamEventHandlers - ON_MESSAGE_DELTA event:', JSON.stringify(event), res ? res : 'res is undefined');
       if (res) {
         sendEvent(res, event);
       }
