@@ -193,6 +193,7 @@ function getDefaultHandlers({
        * @param {GraphRunnableConfig['configurable']} [metadata] The runnable metadata.
        */
       handle: (event, data, metadata) => {
+        console.log('ON_RUN_STEP event received:', JSON.stringify({ event, data, metadata }));
         if (data?.stepDetails.type === StepTypes.TOOL_CALLS) {
           emitEvent(res, streamId, { event, data });
         } else if (checkIfLastAgent(metadata?.last_agent_id, metadata?.langgraph_node)) {
